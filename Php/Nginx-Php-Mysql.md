@@ -1,29 +1,4 @@
 # Despliegue de Nginx, Php-fpm y Mysql
-## Php-fpm
-Primero haremos el despliegue del contenedor con Php-fpm, para ello ejecutamos el siguiente comando:
-
-```bash
-docker run -d --name php-fpm \
-    -v /var/containers/nginx/etc/nginx/vhosts/php:/var/www/html:z \
-    php:7-fpm
-```
-Para llevar acabo la integración con Mysql, dentro del contenedor de PHP necesitamos añadir los paquetes **pdo_mysql** y **pdo**.
-
-Para ello ejecutamos **(dentro del contenedor)**:
-
-```bash
-apt-get update && \
-apt-get install -y libmcrypt-dev mysql-client && \
-apt-get install php-json && \
-docker-php-ext-install pdo_mysql && \
-docker-php-ext-install pdo
-```
-Para hacer efectivos los cambios, reiniciamos el contenedor de Php con la siguiente instrucción:
-
-```bash
-docker restart php-fpm
-```
-
 ## Mysql
 Para la implementación de Mysql utilizaremos el siguiente script:
 
@@ -47,12 +22,37 @@ docker run -td  -v /var/containers/${MYSQL_INSTANCE_NAME}/var/log/mysql/:/var/lo
                 --ulimit nproc=2000:2000 \
                 -e TZ=America/Mexico_City \
                 -v /etc/localtime:/etc/localtime:ro \
-                -e 'MYSQL_ROOT_PASSWORD=my_pass' \
+                -e 'MYSQL_ROOT_PASSWORD=3KfIhp3UDC' \
                 --name=${MYSQL_INSTANCE_NAME} \
                 -p 3306:3306 \
                 mysql:5.7
 ```
 En el script anterior es importante especificar la contraseña del usuario root de Mysql con la variable de entorno **MYSQL_ROOT_PASSWORD**.
+
+## Php-fpm
+A continuación haremos el despliegue del contenedor con Php-fpm, para ello ejecutamos el siguiente comando:
+
+```bash
+docker run -d --name --link mysql57:mysql57 php-fpm \
+    -v /var/containers/nginx/etc/nginx/vhosts/php:/var/www/html:z \
+    php:7-fpm
+```
+Para llevar acabo la integración con Mysql, dentro del contenedor de PHP necesitamos añadir los paquetes **pdo_mysql** y **pdo**.
+
+Para ello ejecutamos **(dentro del contenedor)**:
+
+```bash
+apt-get update && \
+apt-get install -y libmcrypt-dev mysql-client && \
+docker-php-ext-install json && \
+docker-php-ext-install pdo_mysql && \
+docker-php-ext-install pdo
+```
+Para hacer efectivos los cambios, reiniciamos el contenedor de Php con la siguiente instrucción:
+
+```bash
+docker restart php-fpm
+```
 
 ## Nginx
 Una vez desplegado el contendor de Php-fmp procedemos a desplegar el contenedor de Nginx a tráves de:
