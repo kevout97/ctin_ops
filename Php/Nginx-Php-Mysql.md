@@ -14,6 +14,7 @@ Para ello ejecutamos **(dentro del contenedor)**:
 ```bash
 apt-get update && \
 apt-get install -y libmcrypt-dev mysql-client && \
+apt-get install php-json && \
 docker-php-ext-install pdo_mysql && \
 docker-php-ext-install pdo
 ```
