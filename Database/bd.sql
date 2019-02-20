@@ -30,7 +30,7 @@ CREATE TABLE `incidents` (
 DROP TABLE IF EXISTS `owner`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `owner` (
-  `ID_OWNER` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_OWNER` int(11) NOT NULL,
   `NAME` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_OWNER`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -38,7 +38,7 @@ CREATE TABLE `owner` (
 DROP TABLE IF EXISTS `queues`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `queues` (
-  `ID_queues` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_queues` int(11) NOT NULL,
   `QUEUES` varchar(20) NOT NULL,
   PRIMARY KEY (`ID_queues`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -83,4 +83,9 @@ CREATE TABLE `queue_inci` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO causes(CAUSE) VALUES('Capacitacion'), ('Documentacion'), ('Error humano');
-INSERT INTO owner(NAME) VALUES('Jose Villa'),('Metztli Alonso'),('Eduardo Sanchez'),('Axl Lopez'),('Oscar Meza'),('Magali Lopez');
+INSERT INTO owner(ID_OWNER,NAME) VALUES(6, 'Jose Villa'),(7, 'Metztli Alonso'),(8, 'Eduardo Sanchez'),(9, 'Axl Lopez'),(10, 'Oscar Meza'),(11, 'Magali Lopez');
+INSERT INTO queues(ID_queues, QUEUES) VALUES(9, 'AMX-Capacitacion'),(29, 'AMX-ClaroMusica-dla'),(27, 'AMX-ClaroPagos'),(14, 'AMX-Claroshop'),(33, 'AMX-Claroshop::amx-arladm'),
+(20, 'AMX-eCommerce'),(8, 'AMX-GI-Administracion-Interna'),(12, 'AMX-Intermediacion-Terceros'),(18, 'AMX-Intermediacion-Terceros::amx-triara-fw'),(5, 'AMX-Portales Comerciales'),
+(10, 'AMX-Portales Comerciales::amx-casos'),(26, 'AMX-Portales Comerciales::amx-ssgt'),(25, 'AMX-Portales Comerciales::ClaroChile'),(24, 'AMX-Portales Comerciales::ClaroPeru'),
+(11, 'AMX-Portales Comerciales::Ecuador'),(21, 'AMX-Portales-Cloud'),(17, 'AMX-Proyectos Generales-TyP'),(28,'AMX-Sears-Legacy'),(23, 'AMX-SelfService-CENAM'),(22, 'AMX-SelfService-Chile'),
+(15, 'AMX-SelfService-Colombia'),(16,'AMX-UNOTV'),(32,'AMX-USA');
