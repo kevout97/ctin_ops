@@ -1,19 +1,25 @@
 <?php
 class ApiResponse{
-    $owners;
-    $causes;
-    $queues;
+    public $owners = array ();
+    public $causes = array ();
+    public $queues = array ();
 
     function setOwners($owners){
-        $this->owners = $owners;
+        while ($owner = $owners->fetch(PDO::FETCH_ASSOC)) {
+            array_push($this->owners,$owner);
+        }  
     }
 
     function setCauses($causes){
-        $this->causes = $causes;
+        while ($cause = $causes->fetch(PDO::FETCH_ASSOC)) {
+            array_push($this->causes,$cause);
+        }
     }
 
     function setQueues($queues){
-        $this->queues = $queues;
+        while ($queue = $queues->fetch(PDO::FETCH_ASSOC)) {
+            array_push($this->queues,$queue);
+        }
     }
 }
 ?>
