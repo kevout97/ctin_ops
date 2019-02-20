@@ -39,7 +39,7 @@ DROP TABLE IF EXISTS `queues`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `queues` (
   `ID_queues` int(11) NOT NULL,
-  `QUEUES` varchar(20) NOT NULL,
+  `QUEUES` varchar(40) NOT NULL,
   PRIMARY KEY (`ID_queues`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
