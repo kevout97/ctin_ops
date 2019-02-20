@@ -16,7 +16,7 @@ class DataBase{
         try{
             $this->statement = ($this->connection)->prepare($query);
             $this->statement->execute();
-            return $this->statement->fetchAll();
+            return $this->statement;
         }catch (PDOException $e){
             echo "¡Error!: " . $e->getMessage() . "<br/>";
             die();
