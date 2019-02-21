@@ -10,7 +10,7 @@ Para la implementación de Mysql utilizaremos el siguiente script:
 
 MYSQL_INSTANCE_NAME=mysql57
 
-mkdir /var/containers/${MYSQL_INSTANCE_NAME}/{var/log/mysql,var/lib/mysql,var/backups/ejecucionesscript,etc/mysql} -p
+mkdir /var/containers/${MYSQL_INSTANCE_NAME}/{var/log/mysql,var/lib/mysql,var/backups/ejecucionesscript,etc/mysql,tmp} -p
 chmod 777 -R /var/containers/${MYSQL_INSTANCE_NAME}/tmp
 docker run -td  -v /var/containers/${MYSQL_INSTANCE_NAME}/var/log/mysql/:/var/log/mysql/:z \
                 -v /var/containers/${MYSQL_INSTANCE_NAME}/var/lib/mysql/:/var/lib/mysql/:z \
@@ -24,7 +24,6 @@ docker run -td  -v /var/containers/${MYSQL_INSTANCE_NAME}/var/log/mysql/:/var/lo
                 -v /etc/localtime:/etc/localtime:ro \
                 -e 'MYSQL_ROOT_PASSWORD=3KfIhp3UDC' \
                 --name=${MYSQL_INSTANCE_NAME} \
-                -p 3306:3306 \
                 mysql:5.7
 ```
 En el script anterior es importante especificar la contraseña del usuario root de Mysql con la variable de entorno **MYSQL_ROOT_PASSWORD**.
@@ -33,7 +32,7 @@ En el script anterior es importante especificar la contraseña del usuario root 
 A continuación haremos el despliegue del contenedor con Php-fpm, para ello ejecutamos el siguiente comando:
 
 ```bash
-docker run -d --name --link mysql57:mysql57 php-fpm \
+docker run -d --name php-fpm --link mysql57:mysql57\
     -v /var/containers/nginx/etc/nginx/vhosts/php:/var/www/html:z \
     php:7-fpm
 ```
