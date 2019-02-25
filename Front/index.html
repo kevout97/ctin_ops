@@ -18,58 +18,24 @@
         </div>
         <br>
         <div class="form-inline">
-            <br>
                 <label for="Ticket">Ticket:</label>
-                <input type="text" id="Ticket" class="form-control form-rounded" placeholder="Ticket" maxlength="10" name="tick">
-                <input type="radio" id="Ticket_ID" name="ticketid" value="TicketID" checked="checked"><label for="Ticket_ID">Ticket ID</label>
-                <input type="radio" id="Ticket_Number" name="ticketnum" value="TicketNumber" onChange="findselected()"><label for="Ticket_Number">Ticket Number</label>        
+                <input type="text" id="Ticket" name="tick" class="form-control form-rounded" placeholder="Ticket" maxlength="10"><br>
+                <input type="radio" name="ticket" value="ticketnumber" checked="checked">Ticket Number <br>
+                <input type="radio" name="ticket" value="ticketid">Ticket Id <br>    
         </div>
         <div class="col-xs-4">
                 <br>
                 <p>Queues</p>
                 <select data-placeholder="Queues" class="chosen-select" tabindex="2" name="queues" id="queues"><option value=""></option></select>
-                <!--
-                <select data-placeholder="Queues" class="chosen-select" tabindex="2" id="queues">
-                    <option value=""></option>
-                    <option>AMX-Capacitacion</option>
-                    <option>AMX-ClaroMusica-dla</option>
-                    <option>AMX-ClaroPagos</option>
-                    <option>AMX-Claroshop</option>
-                    <option>AMX-Claroshop::amx-arladm</option>
-                    <option>AMX-eCommerce</option>
-                    <option>AMX-GI-Administracion-Interna</option>
-                    <option>AMX-Intermediacion-Terceros</option>
-                    <option>AMX-Intermediacion-Terceros::amx-triara-fw</option>
-                    <option>AMX-Portales Comerciales</option>
-                    <option>AMX-Portales Comerciales::amx-casos</option>
-                    <option>AMX-Portales Comerciales::amx-ssgt</option>
-                    <option>AMX-Portales Comerciales::ClaroChile</option>
-                    <option>AMX-Portales Comerciales::ClaroPerú</option>
-                    <option>AMX-Portales Comerciales::Ecuador</option>
-                    <option>AMX-Portales-Cloud</option>
-                    <option>AMX-Proyectos Generales-TyP</option>
-                    <option>AMX-Sears-Legacy</option>
-                    <option>AMX-SelfService-CENAM</option>
-                    <option>AMX-SelfService-Chile</option>
-                    <option>AMX-SelfService-Colombia</option>
-                    <option>AMX-UNOTV</option>
-                    <option>AMX-USA</option>
-                </select> -->
             </div>
             <div class="col-xs-4">    
                 <br>
                 <p>Motivo</p>
                 <select data-placeholder="Motivo" class="chosen-select" tabindex="2" name="cause" id="cause"><option value=""></option></select>
-                <!--<select data-placeholder="Motivo" class="chosen-select" tabindex="2" id="cause">
-                    <option value=""></option>
-                    <option>Capacitacion</option>
-                    <option>Documentación</option>
-                    <option>Error humano</option>
-                 </select> -->
             </div>
             <div class="col-xs-4">
                     <br>
-                    <textarea class="col-xs-3" rows="3" placeholder="Comentarios" id="comments"></textarea>
+                    <textarea name="comm" class="col-xs-3" rows="3" placeholder="Comentarios" id="comments"></textarea>
             </div>
                 <br>
                 <button type="submit" class="btn btn-success">Save</button>
