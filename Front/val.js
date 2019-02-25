@@ -29,6 +29,8 @@ function valida(f) {
   
     if(ok == false)
       alert(msg);
+    else  
+      //enviar formulario
     return ok;
   }
 
