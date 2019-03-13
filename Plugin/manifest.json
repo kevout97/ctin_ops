@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "incidencias",
+  "version": "1.0",
+
+  "description": "Plugin para el registro de incidencias",
+  "homepage_url": "http://anubis.amxdigital.net",
+  "icons": {
+    "48": "icons/bulb.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/bulb.png",
+    "default_title": "Incidencias",
+    "default_popup": "popup/index.html"
+  }
+
+}

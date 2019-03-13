@@ -24,11 +24,7 @@ docker run -d --name php-fpm --link mysql57:mysql57\
     php:7-fpm
 
 echo "Configuración del PHP-fpm......"
-docker exec -d php-fpm bash -c "apt-get update && \
-apt-get install -y libmcrypt-dev mysql-client && \
-docker-php-ext-install json && \
-docker-php-ext-install pdo_mysql && \
-docker-php-ext-install pdo"
+docker exec -d php-fpm bash -c "apt-get update && apt-get install -y libmcrypt-dev mysql-client && docker-php-ext-install json && docker-php-ext-install pdo_mysql && docker-php-ext-install pdo"
 
 docker restart php-fpm
 

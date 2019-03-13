@@ -1,0 +1,93 @@
+body{
+    background-color: #f5f5f5;
+}
+#titulo_div{
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 5%;
+    border-right: #f5f5f5 solid 1px;
+    border-left: #f5f5f5 solid 1px;
+    border-top: #f5f5f5 solid 1px;
+    border-bottom: #c4c2c2 solid 1px;
+    background-color: #f5f5f5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #3d9eff;
+}
+#cajita {
+    display: block;
+    width: 50%;
+    position: fixed;
+    left:25%;
+    top:17%;
+    background-color: #f5f5f5;
+    align-content: center;
+}
+#tick_owner{
+    display: -moz-inline-grid;
+}
+#tick_id{
+    display: -moz-inline-grid;
+}
+#tick_que{
+    display: -moz-inline-grid;
+}
+#tick_mot{
+    display: -moz-inline-grid;
+}
+#tick_com{
+    display: -moz-inline-grid;
+    border-bottom: #c4c2c2 solid 1px;
+}
+#tick_but{
+    display: -moz-inline-grid;
+    text-align: center;
+}
+.titulos_es{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: #3d9eff;
+    display: block;
+}
+#Ticket{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+select{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+#comments{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+#btn_save{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    background-color: #3d9eff;
+    border: #3d9eff;
+}
+#btn_cancel{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+#id_Owner{
+    width: 500px;
+}
+#Ticket{
+    width: 320px;
+}
+#queues{
+    width: 500px;
+}
+#cause{
+    width: 500px;
+}
+#comments{
+    width: 500px;
+}
+#img_com{
+    border-bottom: 50px;
+}

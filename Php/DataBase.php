@@ -25,8 +25,8 @@ class DataBase{
 
     function insertUpdateDelete($query){
         try{
-            $this->statement = $this->connection->prepare($query);
-            $this->statement->execute();
+           $this->statement = $this->connection->prepare($query);
+           $this->statement->execute();
         }catch (PDOException $e){
             echo "¡Error!: " . $e->getMessage() . "<br/>";
             die();

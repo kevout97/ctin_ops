@@ -12,6 +12,7 @@ class ApiRequest{
         $this->ticketNumber = $ticketNumber;
         $this->comments = $comments;
         $this->idCause = $idCause;
+        $this->idQueues = $idQueues;
     }
 
     function getIdOwner(){
